@@ -1,0 +1,211 @@
+
+header {
+  background: #fff;
+  border-bottom: 3px solid #B52C51;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.spin {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    -webkit-animation:spin 6s linear infinite;
+    -moz-animation:spin 6s linear infinite;
+    animation:spin 6s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.hit-the-floor {
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow: 
+    0 1px 0 #ccc, 
+    0 2px 0 #c9c9c9, 
+    0 3px 0 #bbb, 
+    0 4px 0 #b9b9b9, 
+    0 5px 0 #aaa, 
+    0 6px 1px rgba(0,0,0,.1), 
+    0 0 5px rgba(0,0,0,.1), 
+    0 1px 3px rgba(0,0,0,.3), 
+    0 3px 5px rgba(0,0,0,.2), 
+    0 5px 10px rgba(0,0,0,.25), 
+    0 10px 10px rgba(0,0,0,.2), 
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+.parallax{
+	background-image: url("../images/baby.png");
+	height:600px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.photocontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px 300px 300px;
+}
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #79B396;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(120%);
+}
+
+.nav_links{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+	padding: 5px;
+}
+
+li {
+	padding: 10px;
+}
+
+.active{
+	font-size: 2.5em;
+}
+
+/*#logo {
+	height: 100px;
+	width: auto;
+	padding: 10px;
+}*/
+
+h1 {
+	color: #B52C51;
+	font-family: helvetica;
+	padding: 5px;
+	font-size: 2em;
+	margin: 0 200px;
+}
+
+
+h2 {
+	color: #B52C51;
+	font-family: helvetica;
+	padding: 5px;
+	font-size: 1.5em;
+	margin: 0 200px;
+}
+
+p {
+	font-family: helvetica;
+}
+
+a {
+	font-family: helvetica;
+	color: #79B396;
+	text-decoration: none;
+}
+
+a:hover {
+	/*text-decoration: underline overline wavy green;*/
+	background-color: #79B396;
+	color: white;
+}
+
+
+
+main {
+	margin: 0 200px;
+}
+
+footer {
+	background-color: pink;
+	padding: 30px;
+	text-align: center;
+}
+
+
+@media screen and (min-width: 850px){
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav_links{
+    display: flex;
+  }
+
+  .nav_item a{
+    padding: 10px;
+    display: flex;
+  }
+}
+
+
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .spin{
+    -webkit-transition: none;
+    -moz-transition: none;
+    animation: none;
+  }
+}
