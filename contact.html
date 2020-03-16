@@ -5,10 +5,21 @@
 	<title>Home</title>
 	<link rel="stylesheet" href="css/html5reset.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160703539-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-160703539-1');
+	</script>
+	
 </head>
 
 <body>
-
+<a href="#content" class="skip">Skip to content</a>
 <header>
 	<img class="spin" src="images/logo.png" alt="Milo's Icon"/>
 	<nav>
@@ -23,29 +34,41 @@
 
 
 	<main>
+	<div id="content">
 	<h1>Bark at me!</h1>
 
  		<div class ="contact-form">
- 			
- 			<form action="https://formspree.io/xyyjejow" method="POST"> 
- 				<fieldset>
-					<label id= "label" for="first-name">First name:</label>
-					<input type = "text" name="first-name"><br>
 
-					<label id = "label1" for="last-name">Last name:</label> 
-					<input type = "text" name="last-name"><br>
 
-					<label id= "label2"> E-mail:
-					<input id="label3" type="email" name="email"><br></label>
+<!-- modify this form HTML and place wherever you want your form -->
 
-					<label id="label3" for="message">Message: </label>
-					<textarea>What do you wanna know? </textarea>
+<form
+  action="https://formspree.io/mleljvwa"
+  method="POST">
 
-					<input type="submit" value ="Bark!">
-				</fieldset>
-			</form>	
+  <label>
+  Name:
+  <input type="text" name="_replyto">
+  </label>
+<br>
+  <label>
+  Email:
+  <input type="text" name="_replyto"></label>
+ <br>
+  <label>
+  Message:
+  <textarea name="message"></textarea>
+  </label>
 
+  <!-- your other form fields go here -->
+
+  <button type="submit">Send</button>
+</form>
+</div>
+<br>
 		</div>
+
+
 	</main>
 	<footer>
 		Made By Milo's Human, Serena Sabuda &copy; 2020

@@ -1,7 +1,7 @@
 
 header {
   background: #fff;
-  border-bottom: 3px solid #B52C51;
+  border-bottom: 3px solid #FFAD5C;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@ header {
 
 .hit-the-floor {
   color: #fff;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
   font-family: Helvetica;
   text-shadow: 
@@ -56,7 +56,18 @@ header {
 }
 
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.momcontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px;
+}
+
+
+/*.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}*/
+
 .flip-card {
   background-color: transparent;
   width: 300px;
@@ -64,7 +75,6 @@ header {
   border: 1px solid #f1f1f1;
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -82,7 +92,7 @@ header {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -93,19 +103,81 @@ header {
 
 /* Style the back side */
 .flip-card-back {
-  background-color: #79B396;
+  background-color: #4A8063;
   color: white;
   transform: rotateY(180deg);
 }
 
+.contact-form {
+	color: #4A8063;
+	font-family: helvetica;
+}
 
+ .skip {
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        height: 20px;
+        width: 20px;
+        text-align: left;
+        overflow: hidden;
+    }
+    
+    a.skip:active, 
+    a.skip:focus, 
+    a.skip:hover {
+        left: 0; 
+        top: 0;
+        width: auto; 
+        height: auto; 
+        overflow: visible; 
+    }
+
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+button[type=submit] {
+  background-color: #4A8063;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(120%);
+    opacity: 0.75;
 }
+
+img:hover {
+	opacity: 1.0;
+}
+
+
 
 .nav_links{
   display:flex;
@@ -120,29 +192,24 @@ ul {
 
 li {
 	padding: 10px;
+	border-right: 1px solid #4A8063;
 }
 
 .active{
 	font-size: 2.5em;
 }
 
-/*#logo {
-	height: 100px;
-	width: auto;
-	padding: 10px;
-}*/
-
 h1 {
-	color: #B52C51;
+	color: #4A8063;
 	font-family: helvetica;
 	padding: 5px;
 	font-size: 2em;
-	margin: 0 200px;
+	margin: 0 20px;
 }
 
 
 h2 {
-	color: #B52C51;
+	color: #4A8063;
 	font-family: helvetica;
 	padding: 5px;
 	font-size: 1.5em;
@@ -151,30 +218,37 @@ h2 {
 
 p {
 	font-family: helvetica;
+	margin: 5px;
 }
 
 a {
 	font-family: helvetica;
-	color: #79B396;
+	color: #4A8063;
 	text-decoration: none;
 }
 
 a:hover {
 	/*text-decoration: underline overline wavy green;*/
-	background-color: #79B396;
+	background-color: #4A8063;
 	color: white;
 }
 
 
 
 main {
-	margin: 0 200px;
+	margin: 0 20px;
 }
 
 footer {
-	background-color: pink;
-	padding: 30px;
+	background-color: #FFAD5C;
+	padding: 10px;
 	text-align: center;
+	font-family: helvetica;
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
 }
 
 
@@ -194,8 +268,42 @@ footer {
     padding: 10px;
     display: flex;
   }
+
+
 }
 
+
+@media screen and (min-width: 770px){
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav_links{
+    display: flex;
+  }
+
+  .nav_item a{
+    padding: 10px;
+    display: flex;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+  main {
+	margin: 0 200px;
+}
+
+h1{
+	margin: 0 200px;
+}
+
+}
 
 
 @media screen and (prefers-reduced-motion: reduce){
